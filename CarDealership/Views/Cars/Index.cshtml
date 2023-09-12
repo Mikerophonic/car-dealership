@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+
+  @using CarDealership.Models
+
+  <h1>Cars For Sale</h1>
+
+  @if (Model.Count == 0)
+  {
+    <p>There are no cars for sale</p>
+  }
+  <ul>
+  @foreach (Car car in Model)
+  {
+    <li>@car.Make, @car.Model, Year: @car.Year, VIN: @car.Vin, $@car.Price </li>
+  }
+  </ul>
+  <a href="/cars/new">Add a new car.</a>
+ 
